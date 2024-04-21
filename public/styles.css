@@ -1,0 +1,121 @@
+body {
+  font-family: 'Century Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#myChartBTC,
+#myChartETH {
+    width: 80%; /* Porcentaje para adaptarse al ancho del dispositivo */
+    height: 60%; /* Reducido el alto para dispositivos móviles */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2%; /* Margen superior en porcentaje */
+  padding: 1% 2%; /* Añade algo de espacio interno alrededor del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  color: white; /* Color del texto */
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%; /* Margen superior en porcentaje */
+}
+
+.menu-item {
+  margin: 0 2%; /* Margen izquierdo y derecho en porcentaje */
+  padding: 1%; /* Padding en porcentaje */
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+  filter: invert(100%); /* Invertir los colores de la imagen al hacer hover */
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  #myChartBTC,
+  #myChartETH {
+    width: 95%; /* Ajusta el ancho al 95% para dispositivos móviles */
+    height: 30%; /* Ajusta el alto al 30% para dispositivos móviles */
+  }
+
+  h1 {
+    font-size: 3vw; /* Tamaño de fuente relativo al ancho de la pantalla */
+  }
+
+  .menu-item {
+    padding: 0.5%; /* Reduce el padding para dispositivos móviles */
+  }
+}
+
+
+/* Estilos para el contenedor que cubre toda la página */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de los demás elementos */
+}
+
+/* Estilos para el contenido del overlay */
+.overlay-content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  animation: drop 1.5s ease forwards; /* Aplica la animación al mensaje */
+}
+
+/* Estilos para la animación de aparición (drop) */
+@keyframes drop {
+  from {
+    transform: translateY(-50px); /* Desplazamiento hacia arriba */
+    opacity: 0; /* Opacidad inicial */
+  }
+  to {
+    transform: translateY(0); /* Sin desplazamiento vertical */
+    opacity: 1; /* Opacidad completa */
+  }
+}
+
+/* Clase para la animación de desaparición */
+.fade-out {
+  animation: fadeOut 1.5s ease forwards;
+}
+
+/* Estilos para la animación de desaparición */
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* Opacidad inicial */
+  }
+  to {
+    opacity: 0; /* Opacidad completa */
+  }
+}
+
+
+h1,
+#myChartBTC,
+#myChartETH {
+  animation: drop 1.5s ease forwards; /* Aplica la animación al cargar la página */
+}
+
+.overlay-content .fab {
+  font-size: 5vw; /* Aumenta el tamaño de los iconos */
+}
+
